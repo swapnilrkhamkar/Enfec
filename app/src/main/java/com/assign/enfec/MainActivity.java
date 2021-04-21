@@ -70,15 +70,16 @@ public class MainActivity extends AppCompatActivity {
             public void onSuccess(@NonNull List<Posts> posts) {
                 Log.e("POSTS", "posts " + posts);
                 List<Posts> postsList = new ArrayList<>();
-                Posts posts1 = new Posts();
                 for (Users users1 : users) {
                     for (Posts posts2 : posts) {
                         if (users1.getId().equals(posts2.getId())) {
-                            posts1.setId(posts2.getId());
+                            Posts posts1 = new Posts();
+//                            posts1.setId(posts2.getId());
                             posts1.setTitle(posts2.getTitle());
                             posts1.setBody(posts2.getBody());
-                            posts1.setId(users1.getEmail());
-                            posts1.setId(users1.getUserName());
+                            posts1.setUserName(users1.getUsername());
+                            posts1.setEmail(users1.getEmail());
+
                             postsList.add(posts1);
                         }
                     }

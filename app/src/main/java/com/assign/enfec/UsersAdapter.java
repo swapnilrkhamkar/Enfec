@@ -1,5 +1,6 @@
 package com.assign.enfec;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -66,6 +67,7 @@ public class UsersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             String title = posts.getTitle();
             String body = posts.getBody();
 
+            Log.e("userName", "userName " + userName);
             if (userName != null)
                 txtName.setText(userName);
 
